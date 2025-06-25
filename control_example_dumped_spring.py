@@ -49,7 +49,7 @@ prob = cp.Problem(cp.Minimize(0), constraints)
 
 # Solution
 print("Solving LMI problem...")
-prob.solve(solver=cp.MOSEK)
+prob.solve(solver=cp.SCS)
 
 
 print(prob.status)
@@ -79,7 +79,7 @@ if K is not None:
     
     # Simulation parameters
     dt = 0.02
-    T_final = 10
+    T_final = 100
     time = np.arange(0, T_final, dt)
     
     # Initial condition: there wheel hits an edge-bump
